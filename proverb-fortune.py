@@ -37,21 +37,22 @@ def request_proverb(start,number):
 def proverb_to_fortune_item(proverb):
     author = proverb.get('author')
     ename = proverb.get('ename')
-    return "{ename}\n\t-{author}\n%\n".format(ename=ename,author=author)
+    return "{ename}\n\t-{author}\n".format(ename=ename,author=author)
 
 def proverbs_to_fortune_file(proverbs,fortune_file):
     with open(fortune_file,mode="a") as f:
-        for proverb in proverbs:
-            item = proverb_to_fortune_item(proverb)
-            f.write(item)
+        fortune_items = [proverb_to_fortune_item(proverb) for proverb in proverbs]
+        f.write('%\n'.join(fortune_items))
 
 if  __name__ == "__main__":
     fortune_file = sys.argv[1]
     start = 0
-    number =10
+    number =50
+    all_proverbs = []
     while True:
         proverbs = request_proverb(start,number)
+        all_proverbs.extend(proverbs)
         if not proverbs:
             break
-        proverbs_to_fortune_file(proverbs,fortune_file)
         start+=number
+    proverbs_to_fortune_file(all_proverbs,fortune_file)
