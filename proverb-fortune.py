@@ -1,4 +1,13 @@
 #! /usr/bin/env python3
+
+'''
+从firefox中尝试点击不同页面,发现访问的URL分别为
+https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?from_mid=1&format=json&ie=utf-8&oe=utf-8&subtitle=%E6%A0%BC%E8%A8%80&query=%E6%A0%BC%E8%A8%80&rn=8&pn=0&resource_id=6844&cb=jQuery110208193217330929087_1488263284684&_=1488263284688
+
+https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?from_mid=1&format=json&ie=utf-8&oe=utf-8&subtitle=%E6%A0%BC%E8%A8%80&query=%E6%A0%BC%E8%A8%80&rn=8&pn=8&resource_id=6844&cb=jQuery110208193217330929087_1488263284684&_=1488263284686
+
+https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?from_mid=1&format=json&ie=utf-8&oe=utf-8&subtitle=%E6%A0%BC%E8%A8%80&query=%E6%A0%BC%E8%A8%80&rn=8&pn=16&resource_id=6844&cb=jQuery110208193217330929087_1488263284684&_=1488263284687
+'''
 import json
 import sys
 import requests
