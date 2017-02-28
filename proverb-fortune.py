@@ -35,8 +35,8 @@ def request_proverb(start,number):
     return proverbs
 
 def proverb_to_fortune_item(proverb):
-    author = proverb.get('author')
-    ename = proverb.get('ename')
+    author = proverb.get('author','')
+    ename = proverb.get('ename','')
     return "{ename}\n\t-{author}\n".format(ename=ename,author=author)
 
 def proverbs_to_fortune_file(proverbs,fortune_file):
