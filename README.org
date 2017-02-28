@@ -1,0 +1,49 @@
+#+TITLE: README
+#+AUTHOR: lujun9972
+#+TAGS: proverb-fortune.py
+#+DATE: [2017-02-28 二 15:22]
+#+LANGUAGE:  zh-CN
+#+OPTIONS:  H:6 num:nil toc:t \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Requirement
++ requests
+* Usage
+1. 执行 =proverb-fortune.py fortune文件= 生成fortune文件
+
+   例如
+   #+BEGIN_SRC shell :dir 
+     ./proverb-fortune.py proverbs
+   #+END_SRC
+
+     #+RESULTS:
+
+2. 使用 =strfile= 创建索引文件
+   #+BEGIN_SRC shell :results org :exports :both 
+     strfile proverbs
+   #+END_SRC
+
+     #+RESULTS:
+     #+BEGIN_SRC org
+     "proverbs.dat" created
+     There were 760 strings
+     Longest string: 313 bytes
+     Shortest string: 28 bytes
+     #+END_SRC
+
+3. 将fortunee文件和生成的索引文件一起拷贝到fortune数据文件目录中
+   #+BEGIN_SRC shell 
+     sudo cp proverbs proverbs.dat /usr/share/fortune
+   #+END_SRC
+     
+   fortune数据存放目录在不同linux发行版上可能不同,具体是在哪,请执行 =man fortune= 查看
+
+   另外,fortune也可以用命令行参数直接指定读取的文件:
+   #+BEGIN_SRC shell :exports both :results org
+     fortune proverbs
+   #+END_SRC
+
+     #+RESULTS:
+     #+BEGIN_SRC org
+     要想做一个真正的英雄是没有选择余地的，往往是要么成功要么成仁。
+       -希契科克
+     #+END_SRC
